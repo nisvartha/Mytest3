@@ -4,24 +4,24 @@ pipeline {
     stages {
         stage(‘One’) {
             steps {
-                 	echo ‘Hi GoodMorning’	 
+                 	echo "Hi GoodMorning"	 
             }
         }
         
         stage(‘Two’) {
             steps {
-                 	input('Do you want to proceed')	 
+                 	input("Do you want to proceed")	 
             }
         }
         stage(‘Three’) {
             when {
-                not {
-                    branch "master"
+                      not {
+                            branch "master"
+                       }
                 }
-            }
-            steps{
-                    echo ‘Hi Step 3’	 
-            }
+            steps {
+                    echo "Hi Step 3"	 
+                 }
         }
         
     }
